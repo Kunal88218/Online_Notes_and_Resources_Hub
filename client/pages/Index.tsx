@@ -220,21 +220,21 @@ export default function Index() {
       </section>
 
       {/* Search Feature Highlight */}
-      <section className="bg-gray-50 py-12 md:py-16">
+      <section className="bg-gray-50 py-8 sm:py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
               Find What You Need
             </h2>
-            <p className="text-gray-600 text-lg mb-8">
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 px-2">
               Use our search feature to quickly find notes by subject, topic, or keyword.
               Discover exactly what you're looking for in seconds.
             </p>
 
             {/* Search Bar Preview */}
-            <div className="bg-white border-2 border-gray-200 rounded-lg p-4 flex items-center gap-3 max-w-lg mx-auto hover:border-accent-blue transition-colors">
+            <div className="bg-white border-2 border-gray-200 rounded-lg p-3 sm:p-4 flex items-center gap-2 sm:gap-3 max-w-lg mx-auto hover:border-accent-blue transition-colors">
               <svg
-                className="w-5 h-5 text-gray-400"
+                className="w-4 sm:w-5 h-4 sm:h-5 text-gray-400 flex-shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -249,7 +249,7 @@ export default function Index() {
               <input
                 type="text"
                 placeholder="Search notes, subjects, or topics…"
-                className="flex-1 outline-none text-gray-700 text-center"
+                className="flex-1 outline-none text-gray-700 text-center text-xs sm:text-base"
               />
             </div>
           </div>
