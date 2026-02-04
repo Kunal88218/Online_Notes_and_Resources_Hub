@@ -106,31 +106,31 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-green-50 py-12 md:py-20">
+      <section className="bg-gradient-to-br from-blue-50 to-green-50 py-8 sm:py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             {/* Hero Icon */}
-            <div className="flex justify-center mb-6">
-              <div className="text-6xl">📖</div>
+            <div className="flex justify-center mb-4 sm:mb-6">
+              <div className="text-5xl sm:text-6xl">📖</div>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
               All Your Study Notes, One Place
             </h1>
 
             {/* Description */}
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 px-2">
               Discover organized, comprehensive notes and study resources across all subjects.
               Learn efficiently with our carefully curated academic materials designed for students.
             </p>
 
             {/* CTA Button */}
-            <div className="flex justify-center gap-4">
-              <button className="px-8 py-3 bg-accent-blue text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all">
+            <div className="flex flex-col xs:flex-row justify-center gap-3 sm:gap-4 px-2">
+              <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-accent-blue text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all text-sm sm:text-base">
                 Start Studying
               </button>
-              <button className="px-8 py-3 border-2 border-accent-green text-accent-green rounded-lg font-semibold hover:bg-accent-green hover:text-white transition-all">
+              <button className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-accent-green text-accent-green rounded-lg font-semibold hover:bg-accent-green hover:text-white transition-all text-sm sm:text-base">
                 Explore Resources
               </button>
             </div>
