@@ -143,54 +143,62 @@ export default function Index() {
       </section>
 
       {/* Subject Selection & Notes Section */}
-      <section className="py-8 sm:py-12 md:py-16">
+      <section className="py-12 sm:py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Title */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 sm:mb-8">
-            Browse by Subject
-          </h2>
+          <div className="mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+              Browse by Subject
+            </h2>
+            <p className="text-gray-600 text-sm sm:text-base">Choose a subject to explore curated study materials</p>
+          </div>
 
           {/* Subject Tabs */}
-          <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8 border-b border-gray-200 pb-4 sm:pb-6 overflow-x-auto">
-            {subjects.map((subject) => (
-              <button
-                key={subject.id}
-                onClick={() => setActiveSubject(subject.id)}
-                className={`px-4 sm:px-6 py-2 rounded-lg font-semibold transition-all text-xs sm:text-base whitespace-nowrap ${
-                  activeSubject === subject.id
-                    ? `bg-gradient-to-r ${
-                        subject.id === "math" || subject.id === "chemistry"
-                          ? "from-accent-blue/20 to-accent-blue/10"
-                          : "from-accent-green/20 to-accent-green/10"
-                      } ${
-                        subject.id === "math" || subject.id === "chemistry"
-                          ? "text-accent-blue"
-                          : "text-accent-green"
-                      } border-b-2 ${
-                        subject.id === "math" || subject.id === "chemistry"
-                          ? "border-accent-blue"
-                          : "border-accent-green"
-                      }`
-                    : "text-gray-600 hover:text-gray-900"
-                }`}
-              >
-                {subject.name}
-              </button>
-            ))}
+          <div className="flex flex-wrap gap-2 sm:gap-3 mb-10 sm:mb-12 border-b border-gray-200 pb-4 sm:pb-6 overflow-x-auto">
+            {subjects.map((subject) => {
+              const isActive = activeSubject === subject.id;
+              const isBlue = subject.id === "math" || subject.id === "chemistry";
+              return (
+                <button
+                  key={subject.id}
+                  onClick={() => setActiveSubject(subject.id)}
+                  className={`px-5 sm:px-6 py-2.5 rounded-xl font-semibold transition-all text-xs sm:text-base whitespace-nowrap ${
+                    isActive
+                      ? `bg-gradient-to-r ${
+                          isBlue
+                            ? "from-accent-blue/20 to-blue-200"
+                            : "from-accent-green/20 to-green-200"
+                        } ${
+                          isBlue
+                            ? "text-accent-blue"
+                            : "text-accent-green"
+                        } border-b-2 ${
+                          isBlue
+                            ? "border-accent-blue shadow-soft"
+                            : "border-accent-green shadow-soft"
+                        }`
+                      : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                  }`}
+                >
+                  {subject.name}
+                </button>
+              );
+            })}
           </div>
 
           {/* Notes Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {currentNotes.map((note) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+            {currentNotes.map((note, index) => {
               const isBlue = activeSubject === "math" || activeSubject === "chemistry";
               return (
                 <div
                   key={note.id}
-                  className="bg-white border border-gray-200 rounded-lg p-4 sm:p-6 hover:shadow-md hover:border-gray-300 transition-all"
+                  className="card-modern animate-fadeInUp"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {/* Card Header */}
-                  <div className="mb-4">
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
+                  <div className="mb-5">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-accent-blue">
                       {note.title}
                     </h3>
                     <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
@@ -199,12 +207,12 @@ export default function Index() {
                   </div>
 
                   {/* Subject Tag */}
-                  <div className="mb-4 flex justify-between items-center">
+                  <div className="mb-5 flex justify-between items-center">
                     <span
-                      className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
+                      className={`inline-block px-4 py-1.5 rounded-full text-xs font-semibold ${
                         isBlue
-                          ? "bg-accent-blue/10 text-accent-blue"
-                          : "bg-accent-green/10 text-accent-green"
+                          ? "bg-gradient-to-r from-accent-blue/10 to-blue-100 text-accent-blue"
+                          : "bg-gradient-to-r from-accent-green/10 to-green-100 text-accent-green"
                       }`}
                     >
                       {note.subject}
@@ -212,7 +220,11 @@ export default function Index() {
                   </div>
 
                   {/* Download Button */}
-                  <button className="w-full flex items-center justify-center gap-2 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all text-sm">
+                  <button className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                    isBlue
+                      ? "bg-gradient-to-r from-accent-blue/10 to-blue-100 text-accent-blue hover:from-accent-blue/20 hover:to-blue-200 hover:shadow-soft"
+                      : "bg-gradient-to-r from-accent-green/10 to-green-100 text-accent-green hover:from-accent-green/20 hover:to-green-200 hover:shadow-soft"
+                  }`}>
                     <Download size={16} />
                     Download
                   </button>
