@@ -106,32 +106,36 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-green-50 py-8 sm:py-12 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
+      <section className="gradient-hero py-12 sm:py-16 md:py-24 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-72 h-72 bg-accent-blue/5 rounded-full -mr-36 -mt-36 animate-pulse-light"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-green/5 rounded-full -ml-48 -mb-48 animate-pulse-light" style={{animationDelay: '1s'}}></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto animate-fadeInUp">
             {/* Hero Icon */}
-            <div className="flex justify-center mb-4 sm:mb-6">
-              <div className="text-5xl sm:text-6xl">📖</div>
+            <div className="flex justify-center mb-6 sm:mb-8">
+              <div className="text-6xl sm:text-7xl md:text-8xl animate-bounce" style={{animationDuration: '2s'}}>📖</div>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
-              All Your Study Notes, One Place
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+              All Your Study Notes, <span className="bg-gradient-to-r from-accent-blue to-accent-green bg-clip-text text-transparent">One Place</span>
             </h1>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 px-2">
+            <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-10 px-2 leading-relaxed">
               Discover organized, comprehensive notes and study resources across all subjects.
               Learn efficiently with our carefully curated academic materials designed for students.
             </p>
 
-            {/* CTA Button */}
-            <div className="flex flex-col xs:flex-row justify-center gap-3 sm:gap-4 px-2">
-              <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-accent-blue text-white rounded-lg font-semibold hover:bg-opacity-90 transition-all text-sm sm:text-base">
-                Start Studying
+            {/* CTA Buttons */}
+            <div className="flex flex-col xs:flex-row justify-center gap-4 sm:gap-5 px-2">
+              <button className="btn-primary">
+                ✨ Start Studying
               </button>
-              <button className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-accent-green text-accent-green rounded-lg font-semibold hover:bg-accent-green hover:text-white transition-all text-sm sm:text-base">
-                Explore Resources
+              <button className="btn-secondary">
+                🚀 Explore Resources
               </button>
             </div>
           </div>
