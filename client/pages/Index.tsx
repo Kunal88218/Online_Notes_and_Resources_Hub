@@ -236,21 +236,26 @@ export default function Index() {
       </section>
 
       {/* Search Feature Highlight */}
-      <section className="bg-gray-50 py-8 sm:py-12 md:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
-              Find What You Need
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent-blue/5 rounded-full -mr-48 -mt-48 animate-pulse-light"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-2xl mx-auto animate-fadeInUp">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+              🔍 Find What You Need
             </h2>
-            <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 px-2">
-              Use our search feature to quickly find notes by subject, topic, or keyword.
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 px-2 leading-relaxed">
+              Use our powerful search feature to quickly find notes by subject, topic, or keyword.
               Discover exactly what you're looking for in seconds.
             </p>
 
             {/* Search Bar Preview */}
-            <div className="bg-white border-2 border-gray-200 rounded-lg p-3 sm:p-4 flex items-center gap-2 sm:gap-3 max-w-lg mx-auto hover:border-accent-blue transition-colors">
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-4 sm:p-5 flex items-center gap-3 sm:gap-4 max-w-lg mx-auto hover:border-accent-blue hover:shadow-medium transition-all duration-300 focus-within:border-accent-blue focus-within:shadow-medium">
               <svg
-                className="w-4 sm:w-5 h-4 sm:h-5 text-gray-400 flex-shrink-0"
+                className="w-5 sm:w-6 h-5 sm:h-6 text-gray-400 flex-shrink-0"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -265,7 +270,7 @@ export default function Index() {
               <input
                 type="text"
                 placeholder="Search notes, subjects, or topics…"
-                className="flex-1 outline-none text-gray-700 text-center text-xs sm:text-base"
+                className="flex-1 outline-none text-gray-700 text-center text-sm sm:text-base font-medium placeholder-gray-400"
               />
             </div>
           </div>
