@@ -11,7 +11,8 @@ export default function Subjects() {
               Subjects Page
             </h1>
             <p className="text-lg text-gray-600 mb-8">
-              This page is ready to be customized! Continue prompting to fill in detailed subject listings, categorized notes, and more content.
+              This page is ready to be customized! Continue prompting to fill in
+              detailed subject listings, categorized notes, and more content.
             </p>
             <div className="inline-block bg-blue-50 border-2 border-accent-blue rounded-lg px-6 py-3">
               <p className="text-accent-blue font-semibold">

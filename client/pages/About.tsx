@@ -11,7 +11,9 @@ export default function About() {
               About Page
             </h1>
             <p className="text-lg text-gray-600 mb-8">
-              This page is ready to be customized! Continue prompting to add information about the platform, team, mission, values, and more details about your academic resource hub.
+              This page is ready to be customized! Continue prompting to add
+              information about the platform, team, mission, values, and more
+              details about your academic resource hub.
             </p>
             <div className="inline-block bg-blue-50 border-2 border-accent-blue rounded-lg px-6 py-3">
               <p className="text-accent-blue font-semibold">

@@ -10,10 +10,26 @@ interface Note {
 }
 
 const subjects = [
-  { id: "math", name: "Mathematics", color: "bg-accent-blue/10 text-accent-blue" },
-  { id: "physics", name: "Physics", color: "bg-accent-green/10 text-accent-green" },
-  { id: "chemistry", name: "Chemistry", color: "bg-accent-blue/10 text-accent-blue" },
-  { id: "cs", name: "Computer Science", color: "bg-accent-green/10 text-accent-green" },
+  {
+    id: "math",
+    name: "Mathematics",
+    color: "bg-accent-blue/10 text-accent-blue",
+  },
+  {
+    id: "physics",
+    name: "Physics",
+    color: "bg-accent-green/10 text-accent-green",
+  },
+  {
+    id: "chemistry",
+    name: "Chemistry",
+    color: "bg-accent-blue/10 text-accent-blue",
+  },
+  {
+    id: "cs",
+    name: "Computer Science",
+    color: "bg-accent-green/10 text-accent-green",
+  },
 ];
 
 const notesData: Record<string, Note[]> = {
@@ -47,13 +63,15 @@ const notesData: Record<string, Note[]> = {
     {
       id: "p2",
       title: "Thermodynamics & Heat",
-      description: "Temperature, entropy, heat transfer, and laws of thermodynamics",
+      description:
+        "Temperature, entropy, heat transfer, and laws of thermodynamics",
       subject: "Physics",
     },
     {
       id: "p3",
       title: "Electromagnetism",
-      description: "Electric fields, magnetic fields, and electromagnetic waves",
+      description:
+        "Electric fields, magnetic fields, and electromagnetic waves",
       subject: "Physics",
     },
   ],
@@ -109,34 +127,42 @@ export default function Index() {
       <section className="gradient-hero py-12 sm:py-16 md:py-24 relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-72 h-72 bg-accent-blue/5 rounded-full -mr-36 -mt-36 animate-pulse-light"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-green/5 rounded-full -ml-48 -mb-48 animate-pulse-light" style={{animationDelay: '1s'}}></div>
+        <div
+          className="absolute bottom-0 left-0 w-96 h-96 bg-accent-green/5 rounded-full -ml-48 -mb-48 animate-pulse-light"
+          style={{ animationDelay: "1s" }}
+        ></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto animate-fadeInUp">
             {/* Hero Icon */}
             <div className="flex justify-center mb-6 sm:mb-8">
-              <div className="text-6xl sm:text-7xl md:text-8xl animate-bounce" style={{animationDuration: '2s'}}>📖</div>
+              <div
+                className="text-6xl sm:text-7xl md:text-8xl animate-bounce"
+                style={{ animationDuration: "2s" }}
+              >
+                📖
+              </div>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
-              All Your Study Notes, <span className="bg-gradient-to-r from-accent-blue to-accent-green bg-clip-text text-transparent">One Place</span>
+              All Your Study Notes,{" "}
+              <span className="bg-gradient-to-r from-accent-blue to-accent-green bg-clip-text text-transparent">
+                One Place
+              </span>
             </h1>
 
             {/* Description */}
             <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-10 px-2 leading-relaxed">
-              Discover organized, comprehensive notes and study resources across all subjects.
-              Learn efficiently with our carefully curated academic materials designed for students.
+              Discover organized, comprehensive notes and study resources across
+              all subjects. Learn efficiently with our carefully curated
+              academic materials designed for students.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col xs:flex-row justify-center gap-4 sm:gap-5 px-2">
-              <button className="btn-primary">
-                ✨ Start Studying
-              </button>
-              <button className="btn-secondary">
-                🚀 Explore Resources
-              </button>
+              <button className="btn-primary">✨ Start Studying</button>
+              <button className="btn-secondary">🚀 Explore Resources</button>
             </div>
           </div>
         </div>
@@ -150,14 +176,17 @@ export default function Index() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2">
               Browse by Subject
             </h2>
-            <p className="text-gray-600 text-sm sm:text-base">Choose a subject to explore curated study materials</p>
+            <p className="text-gray-600 text-sm sm:text-base">
+              Choose a subject to explore curated study materials
+            </p>
           </div>
 
           {/* Subject Tabs */}
           <div className="flex flex-wrap gap-2 sm:gap-3 mb-10 sm:mb-12 border-b border-gray-200 pb-4 sm:pb-6 overflow-x-auto">
             {subjects.map((subject) => {
               const isActive = activeSubject === subject.id;
-              const isBlue = subject.id === "math" || subject.id === "chemistry";
+              const isBlue =
+                subject.id === "math" || subject.id === "chemistry";
               return (
                 <button
                   key={subject.id}
@@ -169,9 +198,7 @@ export default function Index() {
                             ? "from-accent-blue/20 to-blue-200"
                             : "from-accent-green/20 to-green-200"
                         } ${
-                          isBlue
-                            ? "text-accent-blue"
-                            : "text-accent-green"
+                          isBlue ? "text-accent-blue" : "text-accent-green"
                         } border-b-2 ${
                           isBlue
                             ? "border-accent-blue shadow-soft"
@@ -189,7 +216,8 @@ export default function Index() {
           {/* Notes Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {currentNotes.map((note, index) => {
-              const isBlue = activeSubject === "math" || activeSubject === "chemistry";
+              const isBlue =
+                activeSubject === "math" || activeSubject === "chemistry";
               return (
                 <div
                   key={note.id}
@@ -220,11 +248,13 @@ export default function Index() {
                   </div>
 
                   {/* Download Button */}
-                  <button className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
-                    isBlue
-                      ? "bg-gradient-to-r from-accent-blue/10 to-blue-100 text-accent-blue hover:from-accent-blue/20 hover:to-blue-200 hover:shadow-soft"
-                      : "bg-gradient-to-r from-accent-green/10 to-green-100 text-accent-green hover:from-accent-green/20 hover:to-green-200 hover:shadow-soft"
-                  }`}>
+                  <button
+                    className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
+                      isBlue
+                        ? "bg-gradient-to-r from-accent-blue/10 to-blue-100 text-accent-blue hover:from-accent-blue/20 hover:to-blue-200 hover:shadow-soft"
+                        : "bg-gradient-to-r from-accent-green/10 to-green-100 text-accent-green hover:from-accent-green/20 hover:to-green-200 hover:shadow-soft"
+                    }`}
+                  >
                     <Download size={16} />
                     Download
                   </button>
@@ -248,8 +278,9 @@ export default function Index() {
               🔍 Find What You Need
             </h2>
             <p className="text-gray-600 text-sm sm:text-base md:text-lg mb-8 sm:mb-10 px-2 leading-relaxed">
-              Use our powerful search feature to quickly find notes by subject, topic, or keyword.
-              Discover exactly what you're looking for in seconds.
+              Use our powerful search feature to quickly find notes by subject,
+              topic, or keyword. Discover exactly what you're looking for in
+              seconds.
             </p>
 
             {/* Search Bar Preview */}

@@ -23,7 +23,10 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo and Title */}
-            <Link to="/" className="flex items-center gap-3 flex-shrink-0 group">
+            <Link
+              to="/"
+              className="flex items-center gap-3 flex-shrink-0 group"
+            >
               <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-accent-blue to-blue-600 group-hover:shadow-lg group-hover:shadow-accent-blue/40 transition-all duration-300">
                 <span className="text-white font-bold text-lg">📚</span>
               </div>
@@ -103,9 +106,7 @@ export default function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow">
-        {children}
-      </main>
+      <main className="flex-grow">{children}</main>
 
       {/* Footer */}
       <footer className="border-t border-gray-100 bg-gradient-to-r from-gray-50 to-gray-100 mt-12 sm:mt-16">

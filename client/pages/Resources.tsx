@@ -11,7 +11,9 @@ export default function Resources() {
               Resources Page
             </h1>
             <p className="text-lg text-gray-600 mb-8">
-              This page is ready to be customized! Continue prompting to add study materials, external links, recommended books, videos, and other resources.
+              This page is ready to be customized! Continue prompting to add
+              study materials, external links, recommended books, videos, and
+              other resources.
             </p>
             <div className="inline-block bg-green-50 border-2 border-accent-green rounded-lg px-6 py-3">
               <p className="text-accent-green font-semibold">
