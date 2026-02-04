@@ -108,24 +108,26 @@ export default function Layout({ children }: LayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 bg-gray-50 mt-12 sm:mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-          <div className="flex flex-col gap-4 sm:gap-0 sm:flex-row justify-between items-start sm:items-center">
-            <p className="text-gray-600 text-xs sm:text-sm">
+      <footer className="border-t border-gray-100 bg-gradient-to-r from-gray-50 to-gray-100 mt-12 sm:mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <div className="flex flex-col gap-6 sm:gap-0 sm:flex-row justify-between items-start sm:items-center">
+            <p className="text-gray-600 text-xs sm:text-sm font-medium">
               &copy; 2024 Online Notes & Resources Hub. All rights reserved.
             </p>
-            <div className="flex flex-col xs:flex-row gap-4 xs:gap-6">
+            <div className="flex flex-col xs:flex-row gap-4 xs:gap-8">
               <a
                 href="#"
-                className="text-gray-600 hover:text-accent-blue text-xs sm:text-sm transition-colors"
+                className="text-gray-600 hover:text-accent-blue text-xs sm:text-sm font-medium transition-all duration-200 relative group"
               >
                 Contact
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-blue group-hover:w-full transition-all duration-300"></span>
               </a>
               <a
                 href="#"
-                className="text-gray-600 hover:text-accent-blue text-xs sm:text-sm transition-colors"
+                className="text-gray-600 hover:text-accent-blue text-xs sm:text-sm font-medium transition-all duration-200 relative group"
               >
                 Privacy Policy
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-blue group-hover:w-full transition-all duration-300"></span>
               </a>
             </div>
           </div>
